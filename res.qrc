@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/Button_image">
+        <file>close.png</file>
+        <file>close1.png</file>
+        <file>close2.png</file>
+        <file>min.png</file>
+    </qresource>
+</RCC>
