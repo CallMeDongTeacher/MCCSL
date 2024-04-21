@@ -36,47 +36,45 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->closeButton, SIGNAL(clicked()), this, SLOT(close()));
     connect(ui->minButton, SIGNAL(clicked()), this, SLOT(showMinimized()));
 
-
+    //设置字体
     ui->clientpageButton->setStyleSheet("QPushButton{font-family:'微软雅黑';font-size:25px;}");
     ui->serverpageButton->setStyleSheet("QPushButton{font-family:'微软雅黑';font-size:25px;}");
     ui->downloadpageButton->setStyleSheet("QPushButton{font-family:'微软雅黑';font-size:25px;}");
     ui->natpageButton->setStyleSheet("QPushButton{font-family:'微软雅黑';font-size:25px;}");
     ui->otherpageButton->setStyleSheet("QPushButton{font-family:'微软雅黑';font-size:25px;}");
 
+    //设置大小
     ui->clientpageButton->setGeometry(0,100,160,80);
     ui->serverpageButton->setGeometry(0,180,160,80);
     ui->downloadpageButton->setGeometry(0,260,160,80);
     ui->natpageButton->setGeometry(0,340,160,80);
     ui->otherpageButton->setGeometry(0,420,160,80);
 
+    ui->clientdownloadButton->setGeometry(x,y,m,n);
+    ui->serverdownloadButton->setGeometry(x,y,m,n);
+    ui->moddownloadButton->setGeometry(x,y,m,n);
+    ui->plugdownloadButton->setGeometry(x,y,m,n);
+    /*
+     * 在C++中“//”表示注释
+     * setGeometry(x,y,m,n);表示
+     * 从(x, y)点开始，往右下展示一个(m ,n)的组件
+     * 如：
+     *
+     *  这是点(x, y) -> |-------这条边长m --------|
+     *                 |                        |
+     *      这条边长n-> |                        |  <-这条边长n
+     *                 |------这条边长m ---------|
+     */
+
+    //设置tooltip
     ui->clientpageButton->setToolTip(tr("查看/管理/启动已经安装的我的世界客户端"));
     ui->serverpageButton->setToolTip(tr("查看/管理/启动已经安装的我的世界服务端"));
     ui->downloadpageButton->setToolTip(tr("下载客户端/模组/服务端/插件等各种资源"));
     ui->natpageButton->setToolTip(tr("内网穿透(没错，还没完工>_<)"));
     ui->otherpageButton->setToolTip(tr("关于MCCSL的制作>_<"));
 
-
-    connect(ui->clientpageButton, &QPushButton::clicked, [=]() {
-        ui->stackedWidget->setCurrentIndex(1);
-        });
-
-    connect(ui->serverpageButton, &QPushButton::clicked, [=]() {
-        ui->stackedWidget->setCurrentIndex(2);
-        });
-
-    connect(ui->downloadpageButton, &QPushButton::clicked, [=]() {
-        ui->stackedWidget->setCurrentIndex(3);
-        });
-
-    // connect(ui->natpageButton, &QPushButton::clicked, [=]() {
-    //     ui->stackedWidget->setCurrentIndex(4);
-    // });
-
-    connect(ui->otherpageButton, &QPushButton::clicked, [=]() {
-        ui->stackedWidget->setCurrentIndex(5);
-    });
-
-
+    //初始化stackedwidget
+    ui->stackedWidget->setCurrentIndex(0);
 
 }
 
@@ -85,6 +83,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+//一大堆切换stackedwidget的函数，一共10个页面，编号0~9
 void MainWindow::on_clientpageButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
