@@ -50,21 +50,18 @@ MainWindow::MainWindow(QWidget *parent)
     ui->natpageButton->setGeometry(0,340,160,80);
     ui->otherpageButton->setGeometry(0,420,160,80);
 
-    ui->clientdownloadButton->setGeometry(x,y,m,n);
-    ui->serverdownloadButton->setGeometry(x,y,m,n);
-    ui->moddownloadButton->setGeometry(x,y,m,n);
-    ui->plugdownloadButton->setGeometry(x,y,m,n);
-    /*
-     * 在C++中“//”表示注释
-     * setGeometry(x,y,m,n);表示
-     * 从(x, y)点开始，往右下展示一个(m ,n)的组件
-     * 如：
-     *
-     *  这是点(x, y) -> |-------这条边长m --------|
-     *                 |                        |
-     *      这条边长n-> |                        |  <-这条边长n
-     *                 |------这条边长m ---------|
-     */
+    ui->clientdownloadButton->setGeometry(320,100,160,80);
+    ui->serverdownloadButton->setGeometry(320,200,160,80);
+    ui->moddownloadButton->setGeometry(320,300,160,80);
+    ui->plugdownloadButton->setGeometry(320,400,160,80);
+    ui->download->setGeometry(362,10,70,40);
+    ui->pludown->setGeometry(342,10,140,40);
+
+
+    ui->clientdownloadButton->setStyleSheet("QPushButton{font-family:'微软雅黑';font-size:25px;}");
+    ui->serverdownloadButton->setStyleSheet("QPushButton{font-family:'微软雅黑';font-size:25px;}");
+    ui->moddownloadButton->setStyleSheet("QPushButton{font-family:'微软雅黑';font-size:25px;}");
+    ui->plugdownloadButton->setStyleSheet("QPushButton{font-family:'微软雅黑';font-size:25px;}");
 
     //设置tooltip
     ui->clientpageButton->setToolTip(tr("查看/管理/启动已经安装的我的世界客户端"));
@@ -74,7 +71,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->otherpageButton->setToolTip(tr("关于MCCSL的制作>_<"));
 
     //初始化stackedwidget
-    ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget->setCurrentIndex(3);
 
 }
 
