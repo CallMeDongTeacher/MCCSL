@@ -17,26 +17,6 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private slots:
-
-    void on_clientpageButton_clicked();
-
-    void on_serverpageButton_clicked();
-
-    void on_downloadpageButton_clicked();
-
-    void on_natpageButton_clicked();
-
-    void on_otherpageButton_clicked();
-
-    void on_clientdownloadButton_clicked();
-
-    void on_serverdownloadButton_clicked();
-
-    void on_moddownloadButton_clicked();
-
-    void on_plugdownloadButton_clicked();
-
 private:
     Ui::MainWindow *ui;
 };
