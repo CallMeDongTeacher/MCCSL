@@ -5,6 +5,8 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets LinguistTools)
 
 qt_standard_project_setup()
 
+set(CMAKE_CXX_STANDARD 23)
+
 qt_add_executable(MCCSL
     WIN32 MACOSX_BUNDLE
     main.cpp
